@@ -5,24 +5,16 @@
     <div>
         <label for="fullName">Full Name</label>
         <input type="text" id="fullName" formControlName="fullName">
-    </div>
 
-    <div>
         <label for="email">Email</label>
         <input type="text" id="email" formControlName="email">
-    </div>
 
-    <div>
         <label for="phone">Phone</label>
         <input type="text" id="phone" formControlName="phone">
-    </div>
 
-    <div>
         <label for="department">Department</label>
         <input type="text" id="department" formControlName="department">
-    </div>
 
-    <div>
-        <button type="submit" [disabled]="!contactFormGroup.valid">Submit</button>
+        <button type="submit" [disabled]="contactFormGroup.invalid">Submit</button>
     </div>
 </form>
