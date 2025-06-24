@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "EsameIfoa.Controllers.ContactsController",
+    "Method": "GetContactsAsync",
+    "RelativePath": "api/Contacts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
