@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EsameIfoa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca3e4bfb8072b0447a22ee396d80571e7fbfbd29")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6668ac1dc15a8a25e500e0215fbe0adfdde98296")]
+>>>>>>> 277e84af7e8cc24fe80a9dd66f26fd5ef0470c24
 [assembly: System.Reflection.AssemblyProductAttribute("EsameIfoa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EsameIfoa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
