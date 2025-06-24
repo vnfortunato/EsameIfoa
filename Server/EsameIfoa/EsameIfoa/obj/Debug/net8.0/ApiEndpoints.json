@@ -8,5 +8,21 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EsameIfoa.Controllers.ContactsController",
+    "Method": "AddContactAsync",
+    "RelativePath": "api/Contacts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contactDto",
+        "Type": "EsameIfoa.Dto.ContactDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

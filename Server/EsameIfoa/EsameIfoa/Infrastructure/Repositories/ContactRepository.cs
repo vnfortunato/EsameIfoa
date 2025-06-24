@@ -7,8 +7,15 @@ namespace EsameIfoa.Infrastructure.Repositories;
 
 public class ContactRepository(DataContext context) : IContactRepository
 {
+
   public async Task<IEnumerable<Contact>> GetAllAsync(CancellationToken cancellationToken)
   {
     return await context.Contacts.ToListAsync(cancellationToken);
+  }
+
+  public async Task AddAsync(Contact contact, CancellationToken cancellationToken)
+  {
+    await context.Contacts.AddAsync(contact, cancellationToken);
+    context.SaveChanges();
   }
 }

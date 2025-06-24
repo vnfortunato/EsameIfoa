@@ -26,7 +26,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer("Server=localhost;Database=EsameIfoa;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
 
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
 builder.Services.AddScoped<IContactService, ContactService>();
