@@ -18,4 +18,9 @@ public class ContactRepository(DataContext context) : IContactRepository
     await context.Contacts.AddAsync(contact, cancellationToken);
     context.SaveChanges();
   }
+
+  public async Task<Contact?> GetByEmailAsync(string email, CancellationToken cancellationToken)
+  {
+    return await context.Contacts.FirstOrDefaultAsync(c => c.Email == email, cancellationToken);
+  }
 }

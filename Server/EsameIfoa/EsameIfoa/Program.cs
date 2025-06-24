@@ -1,4 +1,4 @@
-using EsameIfoa.Domain.Model;
+using EsameIfoa;
 using EsameIfoa.Domain.Repositories;
 using EsameIfoa.Domain.Services;
 using EsameIfoa.Infrastructure.Data;
@@ -8,7 +8,6 @@ using EsameIfoa.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -28,10 +27,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
 
-builder.Services.AddScoped<IContactRepository, ContactRepository>();
-builder.Services.AddScoped<IContactService, ContactService>();
-
-builder.Services.AddAutoMapper(typeof(ContactProfile));
+DependencyLoader.LoadMappings(builder.Services);
+DependencyLoader.LoadRepositories(builder.Services);
+DependencyLoader.LoadServices(builder.Services);
 
 var app = builder.Build();
 
@@ -49,23 +47,11 @@ app.UseCors("AllowAngularClient");
 
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
+using (IServiceScope scope = app.Services.CreateScope())
 {
-  var context = scope.ServiceProvider.GetRequiredService<DataContext>();
+  CancellationToken cancellationToken = new CancellationToken();
 
-  context.Database.EnsureDeleted();
-  context.Database.EnsureCreated();
-
-  Contact contact = new Contact
-  {
-    Department = "IT",
-    FullName = "Mario Rossi",
-    Phone = "1234567890",
-    Email = "mariorossi@example.com"
-  };
-
-  context.Contacts.Add(contact);
-  context.SaveChanges();
+  await DbSeeder.SeedAsync(scope.ServiceProvider, cancellationToken);
 }
 
 app.Run();
