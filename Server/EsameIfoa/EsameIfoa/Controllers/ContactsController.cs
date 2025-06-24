@@ -1,12 +1,11 @@
 ﻿using EsameIfoa.Domain.Services;
 using EsameIfoa.Dto;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace EsameIfoa.Controllers
 {
-  [Route("api/[controller]")]
+  [Route("api/contacts")]
   [ApiController]
   public class ContactsController(IContactService contactService) : ControllerBase
   {
