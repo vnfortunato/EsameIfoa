@@ -21,8 +21,16 @@ public class DbSeeder
       Email = "mariorossi@example.com"
     };
 
-    context.Contacts.Add(contact);
-    context.SaveChanges();
+    Contact secondContact = new Contact
+    {
+      Department = "DevOps",
+      FullName = "Luigi Verdi",
+      Phone = "0987654321",
+      Email = "luigiverdi@example.com"
+    };
+
+    await context.Contacts.AddRangeAsync(contact, secondContact);
+    await context.SaveChangesAsync(cancellationToken);
 
   }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EsameIfoa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52a1dbb1d068ccae4244ccfd47bb914b20e52b58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6668ac1dc15a8a25e500e0215fbe0adfdde98296")]
 [assembly: System.Reflection.AssemblyProductAttribute("EsameIfoa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EsameIfoa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
