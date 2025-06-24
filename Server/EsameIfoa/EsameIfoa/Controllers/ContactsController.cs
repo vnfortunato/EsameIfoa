@@ -28,7 +28,7 @@ namespace EsameIfoa.Controllers
       {
         return Ok(new { message = "Contact added" });
       }
-      return BadRequest(new { message = "User already exists" });
+      return BadRequest(new { message = "Contact already exists" });
     }
   }
 }
