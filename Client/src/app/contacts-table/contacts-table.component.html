@@ -1,0 +1,27 @@
+<h3>Contact Table</h3>
+
+<div class="container">
+    <table class="contact-table">
+        <thead>
+            <tr>
+                <th>FullName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (contact of contacts(); track $index) {
+            <tr>
+                <td>{{ contact.fullName }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.phone }}</td>
+                <td>{{ contact.department }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    
+    <div class="button">
+        <button (click)="onAddContact()">Add User</button>
+    </div>
