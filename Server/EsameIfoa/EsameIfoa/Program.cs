@@ -1,10 +1,5 @@
 using EsameIfoa;
-using EsameIfoa.Domain.Repositories;
-using EsameIfoa.Domain.Services;
 using EsameIfoa.Infrastructure.Data;
-using EsameIfoa.Infrastructure.Repositories;
-using EsameIfoa.Infrastructure.Services;
-using EsameIfoa.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

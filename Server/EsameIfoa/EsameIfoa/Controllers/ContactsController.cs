@@ -2,7 +2,6 @@
 using EsameIfoa.Dto;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace EsameIfoa.Controllers
 {
   [Route("api/contacts")]
