@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   templateUrl: './contacts-table.component.html',
   styleUrl: './contacts-table.component.scss'
 })
+
+// ContactsTableComponent is responsible for displaying a list of contacts
 export class ContactsTableComponent {
 
   protected contacts = signal<Contact[]>([]);
@@ -19,17 +21,19 @@ export class ContactsTableComponent {
     this.loadContacts();
   }
 
+  // Navigates to the contact form for adding a new contact
   protected onAddContact(): void {
     this._router.navigate(['/contact-form']);
   }
 
+  // Loads all contacts from the server and set them to the contacts signal
   private loadContacts(): void {
     this._contactService.getAllContacts().subscribe({
       next: (contacts) => {
         this.contacts.set(contacts);
       },
       error: (err) => {
-        console.error('Error loading contacts:', err);
+        alert(err.error.message);
       }
     });
   }

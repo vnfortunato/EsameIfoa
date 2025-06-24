@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Contact } from '../models/contact.type';
 import { Observable } from 'rxjs';
+import { HttpSuccessMessage } from '../models/http-success-message.type';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ContactService {
     return this._http.get<Contact[]>(this._url)
   }
 
-  public postContact(contact: Contact): Observable<Contact> {
-    return this._http.post<Contact>(this._url, contact)
+  public postContact(contact: Contact): Observable<HttpSuccessMessage> {
+    return this._http.post<HttpSuccessMessage>(this._url, contact)
   }
 }

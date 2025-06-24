@@ -2,17 +2,23 @@
   {
     "ContainingType": "EsameIfoa.Controllers.ContactsController",
     "Method": "GetContactsAsync",
-    "RelativePath": "api/Contacts",
+    "RelativePath": "api/contacts",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "EsameIfoa.Controllers.ContactsController",
     "Method": "AddContactAsync",
-    "RelativePath": "api/Contacts",
+    "RelativePath": "api/contacts",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -23,6 +29,21 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
   }
 ]
